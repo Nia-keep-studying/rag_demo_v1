@@ -66,7 +66,8 @@ vector_results = search_by_vector(
     query_vector=query_vector,
     chunks=chunks,
     chunk_vectors=chunk_vectors,
-    top_k=3
+    top_k=3,
+    min_score=0.6,
 )
 
 all_results = []
@@ -82,11 +83,10 @@ for result in vector_results:
         result["score"],
     )
 
-
-# all_results = retrieve_results(question, chunks)
-# print("命中片段数：", len(all_results))
-
-messages = build_messages(question, all_results)
-answer = answer_question(messages)
+if not all_results:
+    answer = "没有检索到足够相关的资料，暂时无法确认。"
+else:
+    messages = build_messages(question, all_results)
+    answer = answer_question(messages)
 
 print("最终回答：", answer)

@@ -25,14 +25,18 @@ def build_chunk_vectors(chunks, model):
 def get_score(result):
     return result["score"]
 
-def search_by_vector(query_vector,chunks,chunk_vectors,top_k=3):
+def search_by_vector(query_vector,chunks,chunk_vectors,top_k=3,min_score=0.6):
     search_results = []
     for index,chunk_vector in enumerate(chunk_vectors):
         score = float(np.dot(query_vector[0],chunk_vector))
         search_results.append({"chunk":chunks[index],"score":score})
 
-    search_results.sort(key=get_score,reverse=True)
-    return search_results[:top_k]
+    filtered_results = []
+    for result in search_results:
+        if result["score"] >= min_score:
+            filtered_results.append(result)
+    filtered_results.sort(key=get_score,reverse=True)
+    return filtered_results[:top_k]
 
 
 if __name__ == "__main__":
@@ -50,6 +54,7 @@ if __name__ == "__main__":
         chunks=chunks,
         chunk_vectors=chunk_vectors,
         top_k=3,
+        min_score=0.6,
     )
 
     for result in results:
