@@ -1,0 +1,4 @@
+model2vec==0.8.2
+numpy==2.5.3
+openai==3.24.0
+python-dotenv==1.2.4

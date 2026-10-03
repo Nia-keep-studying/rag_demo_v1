@@ -1,0 +1,12 @@
+.env
+.env.*
+!.env.example
+.venv/
+.venv312/
+.venv*/
+.model_cache/
+__pycache__/
+*.py[cod]
+*.db
+*.sqlite*
+*.log
