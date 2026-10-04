@@ -53,8 +53,8 @@ if __name__ == "__main__":
         query_vector=query_vector,
         chunks=chunks,
         chunk_vectors=chunk_vectors,
-        top_k=3,
-        min_score=0.6,
+        top_k=len(chunks),
+        min_score=-1.0,
     )
 
     for result in results:
