@@ -44,25 +44,6 @@ def answer_question(messages):
     )
     return response.choices[0].message.content
 
-
-
-
-
-# all_results = []
-# all_results.extend(keyword_results)
-
-
-
-# unique_results = []
-# seen = set()
-
-# for result in all_results:
-#     result_id = (result["source"], result["chunk_id"])
-#     if result_id not in seen:
-#         unique_results.append(result)
-#         seen.add(result_id)
-
-
 query_vector = embedding_model.encode([question])
 
 vector_results = search_by_vector(

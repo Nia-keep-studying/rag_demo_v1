@@ -1,0 +1,70 @@
+[
+  {
+    "question": "货物寄出去以后还能调整收件地点吗？",
+    "answerable": true,
+    "expected_source": "发货管理制度.md",
+    "expected_section": "地址修改",
+    "passed": true,
+    "retrieved_results": [
+      {
+        "source": "发货管理制度.md",
+        "section": "地址修改",
+        "chunk_id": 2,
+        "content": "订单处于“待发货”状态时，客服可以协助申请修改收货地址。订单进入“已发货”状态后，不再通过订单系统修改地址，用户需要联系物流公司处理。"
+      },
+      {
+        "source": "退款与取消规则.md",
+        "section": "发货后退款",
+        "chunk_id": 1,
+        "content": "订单已经发货时，不能直接按照“未发货取消”处理。用户需要先拒收商品，或者在签收后提交退货申请。仓库确认收到退回商品后，系统才会发起退款。"
+      },
+      {
+        "source": "发货管理制度.md",
+        "section": "现货订单",
+        "chunk_id": 0,
+        "content": "现货订单在支付成功后进入“待发货”状态。正常情况下，仓库应在二十四小时内完成拣货和发货；法定节假日或仓库盘点期间可能顺延。"
+      },
+      {
+        "source": "发货管理制度.md",
+        "section": "状态限制",
+        "chunk_id": 3,
+        "content": "已经取消的订单不能重新改为“待发货”或“已发货”。如果用户仍然需要商品，应重新创建订单。"
+      }
+    ]
+  },
+  {
+    "question": "包裹已经寄出了，还能换个地方接收吗？",
+    "answerable": true,
+    "expected_source": "发货管理制度.md",
+    "expected_section": "地址修改",
+    "passed": true,
+    "retrieved_results": [
+      {
+        "source": "退款与取消规则.md",
+        "section": "发货后退款",
+        "chunk_id": 1,
+        "content": "订单已经发货时，不能直接按照“未发货取消”处理。用户需要先拒收商品，或者在签收后提交退货申请。仓库确认收到退回商品后，系统才会发起退款。"
+      },
+      {
+        "source": "发货管理制度.md",
+        "section": "状态限制",
+        "chunk_id": 3,
+        "content": "已经取消的订单不能重新改为“待发货”或“已发货”。如果用户仍然需要商品，应重新创建订单。"
+      },
+      {
+        "source": "发货管理制度.md",
+        "section": "地址修改",
+        "chunk_id": 2,
+        "content": "订单处于“待发货”状态时，客服可以协助申请修改收货地址。订单进入“已发货”状态后，不再通过订单系统修改地址，用户需要联系物流公司处理。"
+      }
+    ]
+  },
+  {
+    "question": "可以开电子发票吗？",
+    "answerable": false,
+    "expected_source": null,
+    "expected_section": null,
+    "passed": true,
+    "retrieved_results": []
+  }
+]
