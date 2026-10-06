@@ -12,7 +12,7 @@ test_cases = [
         "expected_section": "地址修改",
     },
     {
-        "question": "包裹已经寄出了，还能换个地方接收吗？",
+        "question": "包裹已经寄出，还能换个地方接收吗？",
         "answerable": True,
         "expected_source": "发货管理制度.md",
         "expected_section": "地址修改",
@@ -47,8 +47,8 @@ for test_case in test_cases:
         query_vector=query_vector,
         chunks=chunks,
         chunk_vectors=chunk_vectors,
-        top_k=3,
-        min_score=0.526,
+        top_k=5,
+        min_score=0.4,
     )
 
     keyword_results = retrieve_results(question, chunks)

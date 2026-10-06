@@ -1,0 +1,327 @@
+{
+  "date": "2026-10-06",
+  "verification": "offline local models; no answer API calls",
+  "config": {
+    "vector_top_k": 5,
+    "vector_min_score": 0.4,
+    "use_rerank": true,
+    "rerank_top_k": 3
+  },
+  "cases": [
+    {
+      "label": "明确地址问题",
+      "question": "订单已经发货，还能修改收货地址吗？",
+      "expected_section": "地址修改",
+      "vector_candidates": [
+        {
+          "section": "状态限制",
+          "score": 0.7930305004119873
+        },
+        {
+          "section": "地址修改",
+          "score": 0.7599732875823975
+        },
+        {
+          "section": "发货后退款",
+          "score": 0.7528177499771118
+        },
+        {
+          "section": "预售订单",
+          "score": 0.7446781992912292
+        },
+        {
+          "section": "现货订单",
+          "score": 0.7430517673492432
+        }
+      ],
+      "merged_sections": [
+        "地址修改",
+        "状态限制",
+        "发货后退款",
+        "预售订单",
+        "现货订单"
+      ],
+      "rerank_order": [
+        {
+          "section": "地址修改",
+          "score": 9.67906379699707
+        },
+        {
+          "section": "状态限制",
+          "score": 3.2887890338897705
+        },
+        {
+          "section": "发货后退款",
+          "score": 0.31234318017959595
+        },
+        {
+          "section": "现货订单",
+          "score": -1.880374789237976
+        },
+        {
+          "section": "预售订单",
+          "score": -3.0116236209869385
+        }
+      ],
+      "final_sections": [
+        "地址修改",
+        "状态限制",
+        "发货后退款"
+      ],
+      "expected_section_in_final": true,
+      "answer_api_called": false
+    },
+    {
+      "label": "原始口语问题",
+      "question": "包裹已经寄出了，还能换个地方接收吗？",
+      "expected_section": "地址修改",
+      "vector_candidates": [
+        {
+          "section": "发货后退款",
+          "score": 0.5481632947921753
+        },
+        {
+          "section": "状态限制",
+          "score": 0.5440355539321899
+        },
+        {
+          "section": "地址修改",
+          "score": 0.5418432950973511
+        },
+        {
+          "section": "发货前取消",
+          "score": 0.5328406095504761
+        },
+        {
+          "section": "现货订单",
+          "score": 0.4788132309913635
+        }
+      ],
+      "merged_sections": [
+        "发货后退款",
+        "状态限制",
+        "地址修改",
+        "发货前取消",
+        "现货订单"
+      ],
+      "rerank_order": [
+        {
+          "section": "状态限制",
+          "score": -0.9598074555397034
+        },
+        {
+          "section": "发货后退款",
+          "score": -2.319493055343628
+        },
+        {
+          "section": "地址修改",
+          "score": -2.6792428493499756
+        },
+        {
+          "section": "现货订单",
+          "score": -3.039086103439331
+        },
+        {
+          "section": "发货前取消",
+          "score": -3.4741969108581543
+        }
+      ],
+      "final_sections": [
+        "状态限制",
+        "发货后退款",
+        "地址修改"
+      ],
+      "expected_section_in_final": true,
+      "answer_api_called": false
+    },
+    {
+      "label": "当前自动评估第二题",
+      "question": "包裹已经寄出，还能换个地方接收吗？",
+      "expected_section": "地址修改",
+      "vector_candidates": [
+        {
+          "section": "发货后退款",
+          "score": 0.5695584416389465
+        },
+        {
+          "section": "发货前取消",
+          "score": 0.5339767932891846
+        },
+        {
+          "section": "地址修改",
+          "score": 0.5258879661560059
+        },
+        {
+          "section": "状态限制",
+          "score": 0.5094794034957886
+        },
+        {
+          "section": "现货订单",
+          "score": 0.47585633397102356
+        }
+      ],
+      "merged_sections": [
+        "发货后退款",
+        "发货前取消",
+        "地址修改",
+        "状态限制",
+        "现货订单"
+      ],
+      "rerank_order": [
+        {
+          "section": "状态限制",
+          "score": -1.2413427829742432
+        },
+        {
+          "section": "发货后退款",
+          "score": -2.5777266025543213
+        },
+        {
+          "section": "地址修改",
+          "score": -2.7662107944488525
+        },
+        {
+          "section": "现货订单",
+          "score": -3.2123031616210938
+        },
+        {
+          "section": "发货前取消",
+          "score": -3.6708242893218994
+        }
+      ],
+      "final_sections": [
+        "状态限制",
+        "发货后退款",
+        "地址修改"
+      ],
+      "expected_section_in_final": true,
+      "answer_api_called": false
+    },
+    {
+      "label": "接受表达的新增问题",
+      "question": "包裹已经寄出，还能换个地方接受吗？",
+      "expected_section": "地址修改",
+      "vector_candidates": [
+        {
+          "section": "状态限制",
+          "score": 0.533379852771759
+        },
+        {
+          "section": "发货后退款",
+          "score": 0.509189248085022
+        },
+        {
+          "section": "发货前取消",
+          "score": 0.49029767513275146
+        },
+        {
+          "section": "地址修改",
+          "score": 0.4820643961429596
+        },
+        {
+          "section": "现货订单",
+          "score": 0.45872145891189575
+        }
+      ],
+      "merged_sections": [
+        "状态限制",
+        "发货后退款",
+        "发货前取消",
+        "地址修改",
+        "现货订单"
+      ],
+      "rerank_order": [
+        {
+          "section": "状态限制",
+          "score": -1.3647457361221313
+        },
+        {
+          "section": "发货后退款",
+          "score": -2.609722137451172
+        },
+        {
+          "section": "地址修改",
+          "score": -2.6220805644989014
+        },
+        {
+          "section": "现货订单",
+          "score": -3.7199203968048096
+        },
+        {
+          "section": "发货前取消",
+          "score": -3.763063430786133
+        }
+      ],
+      "final_sections": [
+        "状态限制",
+        "发货后退款",
+        "地址修改"
+      ],
+      "expected_section_in_final": true,
+      "answer_api_called": false
+    },
+    {
+      "label": "无依据问题",
+      "question": "可以开电子发票吗？",
+      "expected_section": null,
+      "vector_candidates": [
+        {
+          "section": "状态限制",
+          "score": 0.5255144238471985
+        },
+        {
+          "section": "发货前取消",
+          "score": 0.4820081889629364
+        },
+        {
+          "section": "地址修改",
+          "score": 0.44705477356910706
+        },
+        {
+          "section": "质量问题",
+          "score": 0.42108941078186035
+        },
+        {
+          "section": "发货后退款",
+          "score": 0.4158475399017334
+        }
+      ],
+      "merged_sections": [
+        "状态限制",
+        "发货前取消",
+        "地址修改",
+        "质量问题",
+        "发货后退款"
+      ],
+      "rerank_order": [
+        {
+          "section": "状态限制",
+          "score": -4.4182000160217285
+        },
+        {
+          "section": "发货前取消",
+          "score": -5.512807369232178
+        },
+        {
+          "section": "发货后退款",
+          "score": -5.542042255401611
+        },
+        {
+          "section": "地址修改",
+          "score": -6.027601718902588
+        },
+        {
+          "section": "质量问题",
+          "score": -6.2872314453125
+        }
+      ],
+      "final_sections": [
+        "状态限制",
+        "发货前取消",
+        "发货后退款"
+      ],
+      "expected_section_in_final": null,
+      "answer_api_called": false
+    }
+  ]
+}
